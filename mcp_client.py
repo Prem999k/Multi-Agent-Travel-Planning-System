@@ -1,12 +1,11 @@
 import os
 import sys
-from pathlib import Path
-
+import asyncio
 import certifi
 from dotenv import load_dotenv
 from langchain_mcp_adapters.client import MultiServerMCPClient
 from langchain_groq import ChatGroq
-
+from pathlib import Path
 
 # ==========================================
 # Environment configuration
@@ -24,7 +23,7 @@ GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
 
 # Automatically find the current project folder.
-# This replaces the hard-coded Windows paths.
+# This replaces hard-coded Windows paths.
 PROJECT_DIR = Path(__file__).resolve().parent
 WEATHER_SERVER_PATH = PROJECT_DIR / "custom_weather_mcp_server.py"
 
@@ -47,7 +46,7 @@ WEATHER_ENV["OPENWEATHER_API_KEY"] = (
 # ==========================================
 
 llm = ChatGroq(
-    model="llama-3.3-70b-versatile",
+    model="openai/gpt-oss-20b",
     api_key=GROQ_API_KEY
 )
 
@@ -351,13 +350,14 @@ async def forecast_mcp_search(city: str):
 
 def extract_destination(query: str):
     prompt = f"""
-    Extract only the destination city or country.
+Extract only the destination city or country
+from the user's travel request for TravelMind AI.
 
-    Query:
-    {query}
+Query:
+{query}
 
-    Return only destination name.
-    """
+Return only the destination name.
+"""
 
     response = llm.invoke(prompt)
 

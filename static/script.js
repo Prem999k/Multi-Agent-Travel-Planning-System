@@ -141,21 +141,26 @@ function downloadPDF() {
 
     const options = {
         margin: 0.5,
-        filename: "ai-travel-plan.pdf",
+
+        filename: "travelmind-ai-travel-plan.pdf",
+
         image: {
             type: "jpeg",
             quality: 0.98
         },
+
         html2canvas: {
             scale: 2,
             useCORS: true,
             backgroundColor: "#ffffff"
         },
+
         jsPDF: {
             unit: "in",
             format: "a4",
             orientation: "portrait"
         },
+
         pagebreak: {
             mode: ["avoid-all", "css", "legacy"]
         }

@@ -5,7 +5,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>TripMate AI</title>
+    <title>TravelMind AI</title>
 
     <link rel="stylesheet" href="/static/style.css">
 </head>
@@ -22,15 +22,15 @@
 
         <section class="hero-section">
             <div class="badge">
-                ✈️ TripMate AI — A Multi-Agent Travel Planner with LangGraph & MCP
+                ✈️ TRAVELMIND AI · An Intelligent Multi-Agent Travel Planning System
             </div>
 
             <h1>
-                Plan Your Perfect Trip with AI
+                Plan Smarter. Travel Better.
             </h1>
 
             <p>
-                Search flights, discover hotels, and generate a complete travel itinerary using a multi-agent LangGraph system.
+                    Tell us where you want to go. TRAVELMIND AI  creates a complete and personalized trip plan with flights, hotels, weather, sightseeing, and a day-by-day itinerary.
             </p>
         </section>
 
@@ -40,7 +40,7 @@
                 <div>
                     <h2>Where do you want to go?</h2>
                     <p>
-                        Example: Plan a complete 7 days Japan trip from Bangladesh under 2 lakhs.
+                        Describe where you want to go, when you want to travel, who is going and what matters most. TravelMind AI turns it into one clear, practical travel plan.
                     </p>
                 </div>
 
@@ -53,7 +53,7 @@
             <div class="input-area">
                 <textarea
                     id="userInput"
-                    placeholder="Plan a complete 7 days Japan trip including flights, hotels and sightseeing under 2 lakhs..."
+                    placeholder="Plan a complete 5 days Tirupati trip from Hyderabad for 4 people, including travel, hotels and sightseeing under ₹25000 total...."
                 ></textarea>
 
                 <button id="sendBtn" onclick="sendMessage()">
@@ -62,23 +62,63 @@
                 </button>
             </div>
 
-            <div class="quick-prompts">
-                <button onclick="setPrompt('Plan a complete 7 days Japan trip from Bangladesh including flights, hotels and sightseeing under 2 lakhs.')">
-                    Japan Trip
-                </button>
+<!-- Quick Travel Prompts -->
+<div class="quick-prompts">
 
-                <button onclick="setPrompt('Plan a 5 days Dubai trip from Dhaka with flights, hotels and sightseeing.')">
-                    Dubai Trip
-                </button>
+    <!-- Indian Destinations -->
 
-                <button onclick="setPrompt('Plan a 7 days Thailand trip from Bangladesh with budget hotels and sightseeing.')">
-                    Thailand Trip
-                </button>
+    <button onclick="setPrompt('Plan a complete 5 days Tirupati trip from Hyderabad for 4 people, including travel, hotels and sightseeing under ₹25000 total.')">
+        Tirupati Trip
+    </button>
 
-                <button onclick="setPrompt('Give me all country flight info.')">
-                    Global Flights
-                </button>
-            </div>
+    <button onclick="setPrompt('Plan a complete 5 days Ram Mandir trip from Hyderabad for 5 people, including travel, hotels and sightseeing under ₹30000 total.')">
+        Ram Mandir Trip
+    </button>
+
+    <button onclick="setPrompt('Plan a complete 7 days Kashmir and Ladakh trip from Hyderabad for 7 people, including travel, hotels and sightseeing under ₹150000 total.')">
+        Kashmir + Ladakh
+    </button>
+
+    <button onclick="setPrompt('Plan a complete 5 days Kerala trip from Hyderabad for 4 people, including travel, hotels and sightseeing under ₹45000 total.')">
+        Kerala Trip
+    </button>
+
+    <button onclick="setPrompt('Plan a complete 5 days Goa trip from Hyderabad for 4 people, including travel, hotels and sightseeing under ₹35000 total.')">
+        Goa Trip
+    </button>
+
+    <button onclick="setPrompt('Plan a complete 5 days Taj Mahal trip from Hyderabad for 4 people, including travel, hotels and sightseeing under ₹30000 total.')">
+        Taj Mahal Trip
+    </button>
+
+
+    <!-- International Destinations -->
+
+    <button onclick="setPrompt('Plan a complete 7 days Japan trip from Hyderabad for 2 people, including flights, hotels and sightseeing under ₹250000 total.')">
+        Japan Trip
+    </button>
+
+    <button onclick="setPrompt('Plan a complete 5 days Dubai trip from Hyderabad for 5 people, including flights, hotels and sightseeing under ₹150000 total.')">
+        Dubai Trip
+    </button>
+
+    <button onclick="setPrompt('Plan a complete 7 days USA trip from Hyderabad for 4 people, including flights, hotels and sightseeing under ₹600000 total.')">
+        USA Trip
+    </button>
+
+    <button onclick="setPrompt('Plan a complete 7 days Russia trip from Hyderabad for 3 people, including flights, hotels and sightseeing under ₹250000 total.')">
+        Russia Trip
+    </button>
+
+    <button onclick="setPrompt('Plan a complete 5 days Singapore trip from Hyderabad for 4 people, including flights, hotels and sightseeing under ₹150000 total.')">
+        Singapore Trip
+    </button>
+
+    <button onclick="setPrompt('Plan a complete 6 days Europe trip from Hyderabad for 2 people, including flights, hotels and sightseeing under ₹300000 total.')">
+        Europe Trip
+    </button>
+
+</div>
 
         </section>
 
@@ -86,7 +126,7 @@
 
             <div class="result-header">
                 <div>
-                    <h2>Your AI Travel Plan</h2>
+                    <h2>Your TravelMind AI Plan</h2>
                     <p id="threadInfo">Thread ID: -</p>
                 </div>
 
@@ -102,7 +142,7 @@
             </div>
 
             <div id="pdfContent" class="pdf-content">
-                <h1 class="pdf-title">AI Travel Plan</h1>
+                <h1 class="pdf-title">TravelMind AI Travel Plan</h1>
                 <div id="resultBox" class="result-box"></div>
             </div>
 
@@ -113,7 +153,9 @@
     </main>
 
     <footer>
-        Built with FastAPI, LangGraph, Groq, PostgreSQL, Tavily and AviationStack
+        TravelMind AI · LangGraph · MCP · PostgreSQL · Tavily · AviationStack
+        <br>
+        Built & designed by Prem Kumar ✦
     </footer>
 
     <!-- Markdown Renderer -->

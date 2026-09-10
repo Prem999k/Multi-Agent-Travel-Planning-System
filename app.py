@@ -18,8 +18,8 @@ nest_asyncio.apply()
 BASE_DIR = Path(__file__).resolve().parent
 
 app = FastAPI(
-    title="TripMate AI",
-    description="LangGraph Multi-Agent Travel Planner with FastAPI Frontend",
+    title="TravelMind AI",
+    description="Personalized, practical multi-agent travel planning with LangGraph, MCP, travel integrations, and PostgreSQL",
     version="1.0.0"
 )
 
@@ -36,11 +36,9 @@ templates = Jinja2Templates(
 )
 
 
-
 class TravelRequest(BaseModel):
     message: str
     thread_id: str | None = None
-
 
 
 @app.get("/", response_class=HTMLResponse)
@@ -96,19 +94,17 @@ async def travel_planner(request_data: TravelRequest):
         )
 
 
-
 @app.get("/health")
 async def health_check():
     return {
         "status": "ok",
-        "message": "AI Travel Planner API is running"
+        "message": "TravelMind AI API is running"
     }
 
 
 @app.get("/favicon.ico")
 async def favicon():
     return JSONResponse(content={})
-
 
 
 if __name__ == "__main__":

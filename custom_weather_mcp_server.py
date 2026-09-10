@@ -38,7 +38,6 @@ def get_current_weather(city: str):
     }
 
 
-
 @mcp.tool()
 def get_forecast(city: str):
 
@@ -76,8 +75,6 @@ def get_forecast(city: str):
         "city": city,
         "forecast": forecast
     }
-
-
 
 
 if __name__ == "__main__":

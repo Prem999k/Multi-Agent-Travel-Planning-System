@@ -13,9 +13,9 @@ os.environ["REQUESTS_CA_BUNDLE"] = certifi.where()
 
 API_KEY = os.getenv("AVIATIONSTACK_API_KEY")
 
-# Default origin when user says only destination, e.g. "Japan trip"
-# Change this if your default location is not Bangladesh/Dhaka.
-DEFAULT_ORIGIN_IATA = os.getenv("DEFAULT_ORIGIN_IATA", "DAC")
+# Default origin when user says only destination, e.g. "Japan trip".
+# TravelMind AI is built for Hyderabad, India.
+DEFAULT_ORIGIN_IATA = os.getenv("DEFAULT_ORIGIN_IATA", "HYD")
 
 
 BASE_URL = "https://api.aviationstack.com/v1/flights"
@@ -64,8 +64,7 @@ COUNTRY_ALIASES = {
 
 # Preferred main airport for country-level search
 COUNTRY_MAIN_AIRPORT = {
-    "BD": "DAC",
-    "IN": "DEL",
+    "IN": "HYD",
     "JP": "NRT",
     "US": "JFK",
     "GB": "LHR",
@@ -85,6 +84,7 @@ COUNTRY_MAIN_AIRPORT = {
     "DE": "FRA",
     "FR": "CDG",
     "IT": "FCO",
+    "BD": "DAC",
     "ES": "MAD",
 }
 
@@ -92,7 +92,7 @@ COUNTRY_MAIN_AIRPORT = {
 
 
 CITY_MAIN_AIRPORT = {
-    "dhaka": "DAC",
+    "hyderabad": "HYD",
     "delhi": "DEL",
     "new delhi": "DEL",
     "mumbai": "BOM",
@@ -116,6 +116,7 @@ CITY_MAIN_AIRPORT = {
     "paris": "CDG",
     "rome": "FCO",
     "madrid": "MAD",
+    "dhaka": "DAC",
     "frankfurt": "FRA",
 }
 
@@ -221,11 +222,11 @@ def resolve_location_to_iata(location: str):
     Converts country/city/airport/IATA into IATA code.
 
     Examples:
-    Bangladesh -> DAC
+    Hyderabad -> HYD
     Japan -> NRT
-    Dhaka -> DAC
+    India -> HYD
     Tokyo -> NRT
-    DAC -> DAC
+    HYD -> HYD
     """
 
     if not location:
@@ -536,6 +537,6 @@ def search_flights(query: str, limit: int = 10):
 
 
 if __name__ == "__main__":
-    print(search_flights("Plan a 7 days Japan trip from Bangladesh"))
+    print(search_flights("Plan a 7 days Japan trip from Hyderabad"))
     print("\n" + "=" * 80 + "\n")
     print(search_flights("all country flight info"))
