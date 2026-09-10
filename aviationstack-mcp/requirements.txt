@@ -1,3 +1,0 @@
-mcp[cli]>=1.10.1
-requests
-pydantic>=2.0
