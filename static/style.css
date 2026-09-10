@@ -44,7 +44,6 @@ body {
     inset: 0;
     z-index: -1;
     overflow: hidden;
-
     background:
         radial-gradient(
             circle at 10% 5%,
@@ -125,21 +124,15 @@ body {
     align-items: center;
     justify-content: center;
     gap: 8px;
-
     padding: 10px 18px;
-
     border: 1px solid rgba(53, 185, 122, 0.28);
     border-radius: 999px;
-
     background: rgba(11, 23, 16, 0.82);
     backdrop-filter: blur(18px);
-
     color: var(--mint);
     font-weight: 700;
     letter-spacing: 0.02em;
-
     margin-bottom: 20px;
-
     box-shadow:
         0 10px 35px rgba(0, 0, 0, 0.18),
         inset 0 1px 0 rgba(255, 255, 255, 0.04);
@@ -150,14 +143,12 @@ body {
     line-height: 1;
     letter-spacing: -0.06em;
     margin-bottom: 18px;
-
     background: linear-gradient(
         135deg,
         #FFFFFF 0%,
         #DDF7E8 48%,
         #35B97A 100%
     );
-
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -166,9 +157,7 @@ body {
 .hero-section p {
     max-width: 760px;
     margin: 0 auto;
-
     color: #B8C8BF;
-
     font-size: 1.08rem;
     line-height: 1.75;
 }
@@ -178,31 +167,39 @@ body {
 -------------------------------------------------- */
 
 .planner-card,
-.result-section {
+.workflow-section,
+.result-section,
+.approval-section {
     background:
         linear-gradient(
             145deg,
             rgba(17, 37, 26, 0.92),
             rgba(11, 23, 16, 0.88)
         );
-
     border: 1px solid rgba(215, 228, 220, 0.12);
-
     box-shadow:
         0 28px 90px rgba(0, 0, 0, 0.38),
         inset 0 1px 0 rgba(255, 255, 255, 0.025);
-
     backdrop-filter: blur(22px);
-
     border-radius: 28px;
 }
 
-.planner-card {
+.planner-card,
+.workflow-section,
+.result-section,
+.approval-section {
     padding: 28px;
 }
 
+.workflow-section,
+.result-section,
+.approval-section {
+    margin-top: 26px;
+}
+
 .card-header,
-.result-header {
+.result-header,
+.workflow-header {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -211,14 +208,17 @@ body {
 }
 
 .card-header h2,
-.result-header h2 {
+.result-header h2,
+.workflow-header h2,
+.approval-content h2 {
     font-size: 1.45rem;
     margin-bottom: 8px;
     color: var(--white);
 }
 
 .card-header p,
-.result-header p {
+.result-header p,
+.approval-content p {
     color: var(--muted);
     line-height: 1.55;
 }
@@ -231,18 +231,13 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-
     background: rgba(35, 139, 91, 0.12);
     color: #B9F1D0;
-
     border: 1px solid rgba(53, 185, 122, 0.25);
-
     padding: 8px 13px;
     border-radius: 999px;
-
     font-weight: 700;
     font-size: 0.85rem;
-
     white-space: nowrap;
 }
 
@@ -250,9 +245,7 @@ body {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-
     background: var(--emerald-bright);
-
     box-shadow:
         0 0 12px rgba(53, 185, 122, 0.9),
         0 0 22px rgba(53, 185, 122, 0.35);
@@ -273,21 +266,14 @@ textarea {
     width: 100%;
     min-height: 150px;
     resize: vertical;
-
     border: 1px solid rgba(215, 228, 220, 0.13);
     border-radius: 22px;
-
     background: rgba(7, 16, 11, 0.78);
-
     color: var(--white);
-
     padding: 20px;
-
     font-size: 1rem;
     line-height: 1.6;
-
     outline: none;
-
     transition:
         border-color 0.25s ease,
         box-shadow 0.25s ease,
@@ -296,11 +282,9 @@ textarea {
 
 textarea:focus {
     border-color: rgba(53, 185, 122, 0.62);
-
     box-shadow:
         0 0 0 4px rgba(35, 139, 91, 0.13),
         0 12px 35px rgba(0, 0, 0, 0.12);
-
     background: rgba(7, 16, 11, 0.88);
 }
 
@@ -314,12 +298,9 @@ textarea::placeholder {
 
 #sendBtn {
     min-width: 170px;
-
     border: 1px solid rgba(53, 185, 122, 0.25);
     border-radius: 22px;
-
     padding: 0 24px;
-
     background:
         linear-gradient(
             135deg,
@@ -327,18 +308,13 @@ textarea::placeholder {
             #238B5B 52%,
             #35B97A 100%
         );
-
     color: var(--white);
-
     font-weight: 800;
     font-size: 1rem;
-
     cursor: pointer;
-
     box-shadow:
         0 16px 35px rgba(35, 139, 91, 0.25),
         inset 0 1px 0 rgba(255, 255, 255, 0.10);
-
     transition:
         transform 0.25s ease,
         box-shadow 0.25s ease,
@@ -347,9 +323,7 @@ textarea::placeholder {
 
 #sendBtn:hover {
     transform: translateY(-2px);
-
     filter: brightness(1.05);
-
     box-shadow:
         0 22px 48px rgba(35, 139, 91, 0.34),
         inset 0 1px 0 rgba(255, 255, 255, 0.12);
@@ -373,44 +347,30 @@ textarea::placeholder {
 
 .quick-prompts {
     display: grid;
-
     grid-template-columns: repeat(6, minmax(0, 1fr));
-
     gap: 10px;
-
     margin-top: 18px;
 }
 
-/* Individual destination pills */
-
 .quick-prompts button {
     min-width: 0;
-
     border: 1px solid rgba(215, 228, 220, 0.13);
-
     background:
         linear-gradient(
             135deg,
             rgba(29, 90, 61, 0.30),
             rgba(17, 37, 26, 0.72)
         );
-
     color: #DDF7E8;
-
     border-radius: 999px;
-
     padding: 10px 12px;
-
     cursor: pointer;
-
     font-family: inherit;
     font-size: 0.88rem;
     font-weight: 700;
-
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-
     transition:
         background 0.2s ease,
         border-color 0.2s ease,
@@ -426,13 +386,9 @@ textarea::placeholder {
             rgba(35, 139, 91, 0.45),
             rgba(29, 90, 61, 0.72)
         );
-
     border-color: rgba(53, 185, 122, 0.45);
-
     color: var(--white);
-
     transform: translateY(-1px);
-
     box-shadow:
         0 8px 20px rgba(0, 0, 0, 0.16);
 }
@@ -442,13 +398,61 @@ textarea::placeholder {
 }
 
 /* --------------------------------------------------
-   RESULT SECTION
+   WORKFLOW
 -------------------------------------------------- */
 
-.result-section {
-    margin-top: 26px;
-    padding: 28px;
+.eyebrow {
+    display: inline-block;
+    margin-bottom: 7px;
+    color: var(--emerald-bright);
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
 }
+
+.guardrail-badge {
+    border: 1px solid rgba(53, 185, 122, 0.30);
+    background: rgba(35, 139, 91, 0.12);
+    color: #B9F1D0;
+    padding: 9px 13px;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.guardrail-badge.blocked {
+    border-color: rgba(239, 68, 68, 0.35);
+    background: rgba(239, 68, 68, 0.13);
+    color: #FECACA;
+}
+
+.supervisor-reasoning {
+    color: #B8C8BF;
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+
+.agent-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.agent-chip {
+    padding: 10px 14px;
+    border-radius: 14px;
+    border: 1px solid rgba(53, 185, 122, 0.30);
+    background: rgba(35, 139, 91, 0.13);
+    color: #DDF7E8;
+    font-size: 0.9rem;
+    font-weight: 750;
+}
+
+/* --------------------------------------------------
+   RESULT SECTION
+-------------------------------------------------- */
 
 .result-actions {
     display: flex;
@@ -460,57 +464,42 @@ textarea::placeholder {
 .download-btn {
     border-radius: 12px;
     padding: 10px 16px;
-
     cursor: pointer;
-
     font-weight: 800;
     font-family: inherit;
-
     transition:
         transform 0.25s ease,
         background 0.25s ease,
         box-shadow 0.25s ease;
 }
 
-/* Copy */
-
 .copy-btn {
     border: 1px solid rgba(215, 228, 220, 0.18);
-
     background: rgba(11, 23, 16, 0.85);
-
     color: var(--white);
 }
 
 .copy-btn:hover {
     background: rgba(35, 139, 91, 0.20);
-
     border-color: rgba(53, 185, 122, 0.30);
-
     transform: translateY(-1px);
 }
 
-/* Download */
-
 .download-btn {
     border: 1px solid rgba(232, 185, 93, 0.20);
-
     background:
         linear-gradient(
             135deg,
             #1D5A3D,
             #238B5B
         );
-
     color: var(--white);
-
     box-shadow:
         0 10px 28px rgba(35, 139, 91, 0.22);
 }
 
 .download-btn:hover {
     transform: translateY(-1px);
-
     box-shadow:
         0 15px 34px rgba(35, 139, 91, 0.30);
 }
@@ -522,16 +511,13 @@ textarea::placeholder {
 .pdf-content {
     background: var(--soft);
     color: var(--ink);
-
     border-radius: 22px;
     padding: 28px;
 }
 
 .pdf-title {
     display: none;
-
     color: var(--forest);
-
     font-size: 2rem;
     margin-bottom: 20px;
 }
@@ -539,10 +525,8 @@ textarea::placeholder {
 .result-box {
     background: var(--soft);
     color: var(--ink);
-
     border: none;
     padding: 0;
-
     white-space: normal;
     overflow-x: auto;
 }
@@ -553,10 +537,8 @@ textarea::placeholder {
 .result-box h2,
 .result-box h3 {
     color: var(--forest);
-
     margin-top: 26px;
     margin-bottom: 12px;
-
     line-height: 1.25;
     font-weight: 800;
 }
@@ -569,29 +551,22 @@ textarea::placeholder {
 
 .result-box h1 {
     font-size: 2rem;
-
     border-bottom: 3px solid var(--emerald);
-
     padding-bottom: 10px;
 }
 
 .result-box h2 {
     font-size: 1.45rem;
-
     border-left: 5px solid var(--emerald);
-
     padding-left: 12px;
     padding-top: 10px;
     padding-bottom: 10px;
-
     background: var(--mint);
-
     border-radius: 10px;
 }
 
 .result-box h3 {
     font-size: 1.15rem;
-
     color: var(--mint-dark);
 }
 
@@ -599,9 +574,7 @@ textarea::placeholder {
 
 .result-box p {
     margin-bottom: 14px;
-
     line-height: 1.75;
-
     color: #37473F;
 }
 
@@ -610,13 +583,11 @@ textarea::placeholder {
 .result-box ul,
 .result-box ol {
     margin: 10px 0 18px 24px;
-
     color: #37473F;
 }
 
 .result-box li {
     margin-bottom: 8px;
-
     line-height: 1.65;
 }
 
@@ -629,9 +600,7 @@ textarea::placeholder {
 
 .result-box hr {
     border: none;
-
     border-top: 1px solid var(--border);
-
     margin: 24px 0;
 }
 
@@ -639,29 +608,113 @@ textarea::placeholder {
 
 .result-box table {
     width: 100%;
-
     border-collapse: collapse;
-
     margin: 18px 0;
-
     color: #37473F;
 }
 
 .result-box th,
 .result-box td {
     border: 1px solid var(--border);
-
     padding: 10px;
-
     text-align: left;
 }
 
 .result-box th {
     background: var(--mint);
-
     color: var(--forest);
-
     font-weight: 800;
+}
+
+/* --------------------------------------------------
+   APPROVAL / HITL
+-------------------------------------------------- */
+
+.approval-section {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+    border-color: rgba(232, 185, 93, 0.35);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(86, 65, 25, 0.25),
+            rgba(11, 23, 16, 0.88)
+        );
+}
+
+.approval-icon {
+    display: grid;
+    place-items: center;
+    width: 54px;
+    height: 54px;
+    border-radius: 16px;
+    background: rgba(232, 185, 93, 0.14);
+    border: 1px solid rgba(232, 185, 93, 0.30);
+    font-size: 1.5rem;
+}
+
+.feedback-input {
+    min-height: 105px;
+    margin-top: 18px;
+    border-radius: 16px;
+}
+
+.approval-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.approve-btn,
+.revise-btn {
+    border: none;
+    border-radius: 13px;
+    padding: 12px 18px;
+    color: var(--white);
+    font-weight: 850;
+    font-family: inherit;
+    cursor: pointer;
+    transition:
+        transform 0.25s ease,
+        filter 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.approve-btn {
+    background:
+        linear-gradient(
+            135deg,
+            #1D5A3D,
+            #35B97A
+        );
+    box-shadow:
+        0 12px 28px rgba(35, 139, 91, 0.25);
+}
+
+.revise-btn {
+    background:
+        linear-gradient(
+            135deg,
+            #9A6418,
+            #E8B95D
+        );
+    box-shadow:
+        0 12px 28px rgba(232, 185, 93, 0.18);
+}
+
+.approve-btn:hover,
+.revise-btn:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+}
+
+.approve-btn:disabled,
+.revise-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
 }
 
 /* --------------------------------------------------
@@ -670,17 +723,11 @@ textarea::placeholder {
 
 .error-box {
     margin-top: 22px;
-
     padding: 18px 20px;
-
     border-radius: 18px;
-
     background: rgba(127, 29, 29, 0.20);
-
     border: 1px solid rgba(248, 113, 113, 0.28);
-
     color: #FECACA;
-
     line-height: 1.5;
 }
 
@@ -690,21 +737,16 @@ textarea::placeholder {
 
 .loader {
     display: inline-block;
-
     width: 18px;
     height: 18px;
-
     border: 3px solid rgba(255, 255, 255, 0.28);
-
     border-top-color: #FFFFFF;
-
     border-radius: 50%;
-
     animation: spin 0.85s linear infinite;
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 /* --------------------------------------------------
@@ -713,13 +755,9 @@ textarea::placeholder {
 
 footer {
     text-align: center;
-
     color: #607169;
-
     padding: 30px 16px 40px;
-
     font-size: 0.90rem;
-
     line-height: 1.7;
 }
 
@@ -743,6 +781,8 @@ footer {
     }
 
     .planner-card,
+    .workflow-section,
+    .approval-section,
     .hero-section,
     footer,
     .result-actions,
@@ -782,13 +822,16 @@ footer {
     }
 
     .planner-card,
-    .result-section {
+    .workflow-section,
+    .result-section,
+    .approval-section {
         padding: 20px;
         border-radius: 22px;
     }
 
     .card-header,
-    .result-header {
+    .result-header,
+    .workflow-header {
         flex-direction: column;
     }
 
@@ -814,17 +857,24 @@ footer {
         font-size: 0.82rem;
     }
 
-    .result-actions {
+    .result-actions,
+    .approval-actions {
         width: 100%;
     }
 
     .copy-btn,
-    .download-btn {
+    .download-btn,
+    .approve-btn,
+    .revise-btn {
         flex: 1;
     }
 
     .pdf-content {
         padding: 20px;
+    }
+
+    .approval-section {
+        grid-template-columns: 1fr;
     }
 }
 

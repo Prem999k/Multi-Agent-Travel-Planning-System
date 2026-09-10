@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>TravelMind AI</title>
@@ -30,7 +29,7 @@
             </h1>
 
             <p>
-                    Tell us where you want to go. TRAVELMIND AI  creates a complete and personalized trip plan with flights, hotels, weather, sightseeing, and a day-by-day itinerary.
+                Tell us where you want to go. TRAVELMIND AI creates a complete and personalized trip plan with flights, hotels, weather, sightseeing, and a day-by-day itinerary.
             </p>
         </section>
 
@@ -62,98 +61,216 @@
                 </button>
             </div>
 
-<!-- Quick Travel Prompts -->
-<div class="quick-prompts">
+            <!-- Quick Travel Prompts -->
+            <div class="quick-prompts">
 
-    <!-- Indian Destinations -->
+                <!-- Indian Destinations -->
 
-    <button onclick="setPrompt('Plan a complete 5 days Tirupati trip from Hyderabad for 4 people, including travel, hotels and sightseeing under ₹25000 total.')">
-        Tirupati Trip
-    </button>
+                <button onclick="setPrompt('Plan a complete 5 days Tirupati trip from Hyderabad for 4 people, including travel, hotels and sightseeing under ₹25000 total.')">
+                    Tirupati Trip
+                </button>
 
-    <button onclick="setPrompt('Plan a complete 5 days Ram Mandir trip from Hyderabad for 5 people, including travel, hotels and sightseeing under ₹30000 total.')">
-        Ram Mandir Trip
-    </button>
+                <button onclick="setPrompt('Plan a complete 5 days Ram Mandir trip from Hyderabad for 5 people, including travel, hotels and sightseeing under ₹30000 total.')">
+                    Ram Mandir Trip
+                </button>
 
-    <button onclick="setPrompt('Plan a complete 7 days Kashmir and Ladakh trip from Hyderabad for 7 people, including travel, hotels and sightseeing under ₹150000 total.')">
-        Kashmir + Ladakh
-    </button>
+                <button onclick="setPrompt('Plan a complete 7 days Kashmir and Ladakh trip from Hyderabad for 7 people, including travel, hotels and sightseeing under ₹150000 total.')">
+                    Kashmir + Ladakh
+                </button>
 
-    <button onclick="setPrompt('Plan a complete 5 days Kerala trip from Hyderabad for 4 people, including travel, hotels and sightseeing under ₹45000 total.')">
-        Kerala Trip
-    </button>
+                <button onclick="setPrompt('Plan a complete 5 days Kerala trip from Hyderabad for 4 people, including travel, hotels and sightseeing under ₹45000 total.')">
+                    Kerala Trip
+                </button>
 
-    <button onclick="setPrompt('Plan a complete 5 days Goa trip from Hyderabad for 4 people, including travel, hotels and sightseeing under ₹35000 total.')">
-        Goa Trip
-    </button>
+                <button onclick="setPrompt('Plan a complete 5 days Goa trip from Hyderabad for 4 people, including travel, hotels and sightseeing under ₹35000 total.')">
+                    Goa Trip
+                </button>
 
-    <button onclick="setPrompt('Plan a complete 5 days Taj Mahal trip from Hyderabad for 4 people, including travel, hotels and sightseeing under ₹30000 total.')">
-        Taj Mahal Trip
-    </button>
+                <button onclick="setPrompt('Plan a complete 5 days Taj Mahal trip from Hyderabad for 4 people, including travel, hotels and sightseeing under ₹30000 total.')">
+                    Taj Mahal Trip
+                </button>
 
+                <!-- International Destinations -->
 
-    <!-- International Destinations -->
+                <button onclick="setPrompt('Plan a complete 7 days Japan trip from Hyderabad for 2 people, including flights, hotels and sightseeing under ₹250000 total.')">
+                    Japan Trip
+                </button>
 
-    <button onclick="setPrompt('Plan a complete 7 days Japan trip from Hyderabad for 2 people, including flights, hotels and sightseeing under ₹250000 total.')">
-        Japan Trip
-    </button>
+                <button onclick="setPrompt('Plan a complete 5 days Dubai trip from Hyderabad for 5 people, including flights, hotels and sightseeing under ₹150000 total.')">
+                    Dubai Trip
+                </button>
 
-    <button onclick="setPrompt('Plan a complete 5 days Dubai trip from Hyderabad for 5 people, including flights, hotels and sightseeing under ₹150000 total.')">
-        Dubai Trip
-    </button>
+                <button onclick="setPrompt('Plan a complete 7 days USA trip from Hyderabad for 4 people, including flights, hotels and sightseeing under ₹600000 total.')">
+                    USA Trip
+                </button>
 
-    <button onclick="setPrompt('Plan a complete 7 days USA trip from Hyderabad for 4 people, including flights, hotels and sightseeing under ₹600000 total.')">
-        USA Trip
-    </button>
+                <button onclick="setPrompt('Plan a complete 7 days Russia trip from Hyderabad for 3 people, including flights, hotels and sightseeing under ₹250000 total.')">
+                    Russia Trip
+                </button>
 
-    <button onclick="setPrompt('Plan a complete 7 days Russia trip from Hyderabad for 3 people, including flights, hotels and sightseeing under ₹250000 total.')">
-        Russia Trip
-    </button>
+                <button onclick="setPrompt('Plan a complete 5 days Singapore trip from Hyderabad for 4 people, including flights, hotels and sightseeing under ₹150000 total.')">
+                    Singapore Trip
+                </button>
 
-    <button onclick="setPrompt('Plan a complete 5 days Singapore trip from Hyderabad for 4 people, including flights, hotels and sightseeing under ₹150000 total.')">
-        Singapore Trip
-    </button>
+                <button onclick="setPrompt('Plan a complete 6 days Europe trip from Hyderabad for 2 people, including flights, hotels and sightseeing under ₹300000 total.')">
+                    Europe Trip
+                </button>
 
-    <button onclick="setPrompt('Plan a complete 6 days Europe trip from Hyderabad for 2 people, including flights, hotels and sightseeing under ₹300000 total.')">
-        Europe Trip
-    </button>
-
-</div>
+            </div>
 
         </section>
 
-        <section id="resultSection" class="result-section hidden">
+        <!-- Supervisor / Guardrail workflow -->
+        <section id="workflowSection" class="workflow-section hidden">
+
+            <div class="workflow-header">
+
+                <div>
+                    <span class="eyebrow">Supervisor Agent</span>
+                    <h2>Execution Plan</h2>
+                </div>
+
+                <span
+                    id="guardrailBadge"
+                    class="guardrail-badge"
+                >
+                    Guardrail passed
+                </span>
+
+            </div>
+
+            <p
+                id="supervisorReasoning"
+                class="supervisor-reasoning"
+            ></p>
+
+            <div
+                id="agentChips"
+                class="agent-chips"
+            ></div>
+
+        </section>
+
+        <!-- Result -->
+        <section
+            id="resultSection"
+            class="result-section hidden"
+        >
 
             <div class="result-header">
+
                 <div>
-                    <h2>Your TravelMind AI Plan</h2>
-                    <p id="threadInfo">Thread ID: -</p>
+                    <h2 id="resultTitle">
+                        Your TravelMind AI Plan
+                    </h2>
+
+                    <p id="threadInfo">
+                        Thread ID: -
+                    </p>
                 </div>
 
                 <div class="result-actions">
-                    <button class="copy-btn" onclick="copyResult()">
+
+                    <button
+                        class="copy-btn"
+                        onclick="copyResult()"
+                    >
                         Copy
                     </button>
 
-                    <button class="download-btn" onclick="downloadPDF()">
+                    <button
+                        class="download-btn"
+                        onclick="downloadPDF()"
+                    >
                         Download PDF
                     </button>
+
                 </div>
+
             </div>
 
-            <div id="pdfContent" class="pdf-content">
-                <h1 class="pdf-title">TravelMind AI Travel Plan</h1>
-                <div id="resultBox" class="result-box"></div>
+            <div
+                id="pdfContent"
+                class="pdf-content"
+            >
+
+                <h1 class="pdf-title">
+                    TravelMind AI Travel Plan
+                </h1>
+
+                <div
+                    id="resultBox"
+                    class="result-box"
+                ></div>
+
             </div>
 
         </section>
 
-        <section id="errorBox" class="error-box hidden"></section>
+        <!-- Human-in-the-Loop -->
+        <section
+            id="approvalSection"
+            class="approval-section hidden"
+        >
+
+            <div class="approval-icon">
+                👤
+            </div>
+
+            <div class="approval-content">
+
+                <span class="eyebrow">
+                    Human-in-the-Loop
+                </span>
+
+                <h2>
+                    Review the draft itinerary
+                </h2>
+
+                <p id="approvalRequest">
+                    Approve the draft or provide feedback before the final plan is generated.
+                </p>
+
+                <textarea
+                    id="approvalFeedback"
+                    class="feedback-input"
+                    placeholder="Add revision feedback, for example: reduce the hotel cost and add one free day..."
+                ></textarea>
+
+                <div class="approval-actions">
+
+                    <button
+                        id="approveBtn"
+                        class="approve-btn"
+                        onclick="submitApproval(true)"
+                    >
+                        Approve & Generate Final
+                    </button>
+
+                    <button
+                        id="reviseBtn"
+                        class="revise-btn"
+                        onclick="submitApproval(false)"
+                    >
+                        Revise Using Feedback
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Error -->
+        <section
+            id="errorBox"
+            class="error-box hidden"
+        ></section>
 
     </main>
 
     <footer>
-        TravelMind AI · LangGraph · MCP · PostgreSQL · Tavily · AviationStack
+            TravelMind AI · FastAPI · LangGraph · MCP · Groq · PostgreSQL · Tavily · AviationStack · OpenWeather
         <br>
         Built & designed by Prem Kumar ✦
     </footer>
